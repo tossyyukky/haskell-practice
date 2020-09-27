@@ -32,7 +32,13 @@ rle = fromCharAndRunLength . toCharAndRunLength
 
 -- | 文字とその連長の組のリストを出力文字列へ変換する
 fromCharAndRunLength :: [(Char, Int)] -> String
-fromCharAndRunLength = undefined
+fromCharAndRunLength = cat . rls2strs
+
+rls2strs :: [(Char, Int)] -> [String]
+rls2strs = undefined
+
+cat :: [String] -> String
+cat = undefined
 
 -- | 入力文字列を文字とその連長の組のリストへ変換する
 toCharAndRunLength :: String -> [(Char, Int)]
