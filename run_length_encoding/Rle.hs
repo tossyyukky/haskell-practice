@@ -1,6 +1,6 @@
 module RLE where
 
-import Data.List ( group, map, concat )
+import Data.List ( group )
 
 -- | ランレングス圧縮
 --
@@ -30,9 +30,9 @@ rle :: String -> String
 -- 中間構造を定義
 rle = concatMap (rls2strs . toPairs) . group
 
-rls2strs :: [(Char, Int)] -> [String]
+rls2strs :: (Char, Int) -> String
 rls2strs (c, n) = c : show n -- nを文字列にして文字cを先頭につける
 
-toPairs :: [String] -> [(Char, Int)]
+toPairs :: String -> (Char, Int)
 toPairs str = (head str, length str)
 
