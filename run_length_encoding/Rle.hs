@@ -25,4 +25,15 @@ rle :: String -> String
 --        | otherwise     = prevChar : shows runLength (aux 1 c s)    -- 違う文字なら新たに1からカウント
 
 -- Haskellらしい書き方
-rle = concatMap (\s -> head s : show (length s)) . group
+--rle = concatMap (\s -> head s : show (length s)) . group
+
+-- 中間構造を定義
+rle = fromCharAndRunLength . toCharAndRunLength
+
+-- | 文字とその連長の組のリストを出力文字列へ変換する
+fromCharAndRunLength :: [(Char, Int)] -> String
+fromCharAndRunLength = undefined
+
+-- | 入力文字列を文字とその連長の組のリストへ変換する
+toCharAndRunLength :: String -> [(Char, Int)]
+toCharAndRunLength = undefined
