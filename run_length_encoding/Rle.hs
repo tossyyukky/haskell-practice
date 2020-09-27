@@ -40,4 +40,10 @@ rls2strs (c, n) = c : show n -- nを文字列にして文字cを先頭につけ�
 
 -- | 入力文字列を文字とその連長の組のリストへ変換する
 toCharAndRunLength :: String -> [(Char, Int)]
-toCharAndRunLength = undefined
+toCharAndRunLength = toPairs . toRLs
+
+toRLs :: String -> [String]
+toRLs = undefined
+
+toPairs :: [String] -> [(Char, Int)]
+toPairs = undefined
