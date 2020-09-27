@@ -32,13 +32,11 @@ rle = fromCharAndRunLength . toCharAndRunLength
 
 -- | 文字とその連長の組のリストを出力文字列へ変換する
 fromCharAndRunLength :: [(Char, Int)] -> String
-fromCharAndRunLength = cat . rls2strs
+fromCharAndRunLength = concat . map rls2strs
 
 rls2strs :: [(Char, Int)] -> [String]
-rls2strs = undefined
+rls2strs (c, n) = c : show n -- nを文字列にして文字cを先頭につける
 
-cat :: [String] -> String
-cat = undefined
 
 -- | 入力文字列を文字とその連長の組のリストへ変換する
 toCharAndRunLength :: String -> [(Char, Int)]
